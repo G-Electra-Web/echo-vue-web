@@ -6,6 +6,7 @@ require (
 	github.com/knadh/koanf/parsers/toml v0.1.0
 	github.com/knadh/koanf/providers/file v0.1.0
 	github.com/knadh/koanf/v2 v2.1.1
+	github.com/lib/pq v1.10.9
 )
 
 require github.com/dgrijalva/jwt-go v3.2.0+incompatible // indirect
@@ -13,6 +14,7 @@ require github.com/dgrijalva/jwt-go v3.2.0+incompatible // indirect
 require (
 	github.com/fsnotify/fsnotify v1.7.0 // indirect
 	github.com/go-viper/mapstructure/v2 v2.0.0 // indirect
+	github.com/jmoiron/sqlx v1.4.0
 	github.com/knadh/koanf/maps v0.1.1 // indirect
 	github.com/labstack/echo v3.3.10+incompatible
 	github.com/labstack/gommon v0.4.2 // indirect

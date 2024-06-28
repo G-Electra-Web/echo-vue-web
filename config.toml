@@ -1,13 +1,13 @@
 [app]
-admin = gelectra@gitam.edu
+admin = "gelectra@gitam.edu"
 debug = true
 
 [db]
-user=
-password=
-db=
-port=
+user = "dbuser"
+password = "postgres"
+dbname = "web1"
+port = 5432
 
 
 [auth]
-jwt_secret=
+jwt_secret = ""

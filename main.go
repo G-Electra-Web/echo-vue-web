@@ -2,10 +2,11 @@ package main
 
 import (
 	"flag"
-	"fmt"
+	"log"
 	"log/slog"
 	"os"
 
+	"git.nothr.in/nothr/g-electra/pkg/database"
 	"github.com/knadh/koanf/parsers/toml"
 	"github.com/knadh/koanf/providers/file"
 	"github.com/knadh/koanf/v2"
@@ -18,10 +19,11 @@ func main() {
 	k := koanf.New(".")
 
 	cfgPath := flag.String("config", "config.toml", "config file for the app")
+	flag.Parse()
 
 	// Load config file
 	if err := k.Load(file.Provider(*cfgPath), toml.Parser()); err != nil {
-		fmt.Errorf("error loading config: %v", err)
+		log.Fatalf("error loading config: %v", err)
 	}
 
 	//Initilize logger
@@ -37,6 +39,10 @@ func main() {
 	logger.Info("Loaded Config file")
 
 	// Initialise DB
+	err := database.ConnectDB(k, logger)
+	if err != nil {
+		log.Fatalf("Failed to connect to database: %v", err)
+	}
 
 	// Initialise Echo
 	e := echo.New()
