@@ -1,0 +1,13 @@
+[app]
+admin = gelectra@gitam.edu
+debug = true
+
+[db]
+user=
+password=
+db=
+port=
+
+
+[auth]
+jwt_secret=
