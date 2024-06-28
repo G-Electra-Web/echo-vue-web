@@ -9,6 +9,8 @@ import (
 	"github.com/knadh/koanf/parsers/toml"
 	"github.com/knadh/koanf/providers/file"
 	"github.com/knadh/koanf/v2"
+	"github.com/labstack/echo"
+	"github.com/labstack/echo/middleware"
 )
 
 func main() {
@@ -37,5 +39,16 @@ func main() {
 	// Initialise DB
 
 	// Initialise Echo
+	e := echo.New()
+	e.HideBanner = true
+
+	// serve static files
+	e.Use(middleware.StaticWithConfig(middleware.StaticConfig{
+		Root:  "./ui/dist/",
+		Index: "index.html",
+		HTML5: true,
+	}))
+
+	e.Start(":3000")
 
 }
