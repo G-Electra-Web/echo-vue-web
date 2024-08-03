@@ -3,9 +3,10 @@ admin = "gelectra@gitam.edu"
 debug = true
 
 [db]
-user = "dbuser"
+host = "localhost"
+user = "postgres"
 password = "postgres"
-dbname = "web1"
+dbname = "gelectra"
 port = 5432
 
 

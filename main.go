@@ -6,6 +6,7 @@ import (
 	"log/slog"
 	"os"
 
+	"git.nothr.in/nothr/g-electra/pkg/api"
 	"git.nothr.in/nothr/g-electra/pkg/database"
 	"github.com/knadh/koanf/parsers/toml"
 	"github.com/knadh/koanf/providers/file"
@@ -47,6 +48,11 @@ func main() {
 	// Initialise Echo
 	e := echo.New()
 	e.HideBanner = true
+
+	// Middleware
+	e.Use(middleware.Logger())
+	// Initialize routes
+	api.InitialiseRoutes(e)
 
 	// serve static files
 	e.Use(middleware.StaticWithConfig(middleware.StaticConfig{

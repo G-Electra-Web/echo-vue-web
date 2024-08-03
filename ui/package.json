@@ -10,12 +10,13 @@
   },
   "dependencies": {
     "@radix-icons/vue": "^1.0.0",
+    "@tanstack/vue-table": "^8.19.2",
     "@vueuse/core": "^10.11.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "lucide-vue-next": "^0.397.0",
-    "radix-vue": "^1.8.5",
-    "tailwind-merge": "^2.3.0",
+    "radix-vue": "^1.9.1",
+    "tailwind-merge": "^2.4.0",
     "tailwindcss-animate": "^1.0.7",
     "vue": "^3.4.29",
     "vue-router": "^4.4.0"
